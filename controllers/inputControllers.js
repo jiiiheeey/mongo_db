@@ -7,11 +7,16 @@ export const uploadInputController = (req, res) => {
     text: req.body.text,
   });
 
-  testInput.save(function (err) {
+  testInput.save((err)=> {
     if(err){
+      res.send(err);
       return err;
+    }else{
+      res.send("successed");
+      return err;
+
     }})
-    res.send("Saved Successfully"));
+   
 };
 
 export const test = (req, res) => {
